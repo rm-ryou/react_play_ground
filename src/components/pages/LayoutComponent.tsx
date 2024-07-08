@@ -1,0 +1,13 @@
+import { Outlet } from "react-router-dom";
+
+const LayOutComponent = () => {
+  return (
+    <div>
+      <main>
+        <Outlet />
+      </main>
+    </div>
+  );
+};
+
+export default LayOutComponent;
