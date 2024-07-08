@@ -1,3 +1,4 @@
+import { Home } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
 const NotFoundRoute = () => {
@@ -6,7 +7,7 @@ const NotFoundRoute = () => {
       <div className='p-52 flex flex-col items-center font-semibold text-white'>
         <h1 className='text-3xl'>404 - Not Found</h1>
         <Link to='/' replace>
-          Go to Home
+          <Home />
         </Link>
       </div>
     </div>
