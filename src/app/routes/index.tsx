@@ -8,5 +8,11 @@ export const createRouter = createBrowserRouter([
     path: '/',
     element: <LayOutComponent />,
     errorElement: <NotFoundRoute />,
+    children: [
+      {
+        index: true,
+        element: <div className='bg-cyan-950 h-screen'>Hello, World!!</div>
+      }
+    ]
   },
 ]);
