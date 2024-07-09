@@ -1,6 +1,4 @@
-import { Home } from '@mui/icons-material';
 import Header from 'components/organisms/Header';
-import { Link } from 'react-router-dom';
 
 const NotFoundRoute = () => {
   return (
