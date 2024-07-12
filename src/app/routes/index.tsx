@@ -1,18 +1,27 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import LayOutComponent from 'components/pages/LayoutComponent';
-import NotFoundRoute from 'components/pages/NotFoundRoute';
+import BoardPage from 'components/pages/BoardPage';
+import NotFoundPage from 'components/pages/NotFoundPage';
+import DefaultPage from 'components/pages/DefaultPages';
 
 export const createRouter = createBrowserRouter([
   {
     path: '/',
-    element: <LayOutComponent />,
-    errorElement: <NotFoundRoute />,
+    element: <DefaultPage />,
+    errorElement: <NotFoundPage />,
     children: [
       {
         index: true,
-        element: <div className='bg-cyan-950 h-screen'>Hello, World!!</div>
-      }
-    ]
+        element: <BoardPage />,
+      },
+      {
+        path: 'boards',
+        element: <BoardPage />,
+      },
+      {
+        path: 'boards/:boardId',
+        element: <div className='text-4xl text-white'>This page is columns page</div>,
+      },
+    ],
   },
 ]);

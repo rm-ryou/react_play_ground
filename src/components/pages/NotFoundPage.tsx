@@ -1,6 +1,6 @@
 import Header from 'components/organisms/Header';
 
-const NotFoundRoute = () => {
+const NotFoundPage = () => {
   return (
     <>
       <Header />
@@ -13,4 +13,4 @@ const NotFoundRoute = () => {
   );
 };
 
-export default NotFoundRoute;
+export default NotFoundPage;
