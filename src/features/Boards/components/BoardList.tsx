@@ -1,20 +1,34 @@
-import type { Board } from 'domains/types';
 import { Link } from 'react-router-dom';
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import type { Board } from 'domains/types';
 
 type Props = {
-  boards: Board[];
+  board: Board;
+  id: number;
 }
 
-const BoardList = ({ boards }: Props) => {
+const BoardList = ({ board, id }: Props) => {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+  } = useSortable({ id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+
   return (
-    <div className='mx-6 my-6 gap-6 grid md:grid-cols-6 lg:grid-col-5'>
-      {boards?.length > 0 && boards.map(board => (
-        <div key={board.id} className='px-8 py-12 font-semibold block rounded-md bg-gray-400'>
-          <Link to={`/boards/${board.id}`}>
-            {board.title}
-          </Link>
-        </div>
-      ))}
+    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+      <div key={board.id} className='px-8 py-12 font-semibold block rounded-md bg-gray-400'>
+        <Link to={`/boards/${board.id}`} className='hover:underline hover:text-blue-500'>
+          {board.title}
+        </Link>
+      </div>
     </div>
   );
 };
