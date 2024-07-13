@@ -25,7 +25,7 @@ const BoardList = ({ board, id }: Props) => {
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
       <div key={board.id} className='px-8 py-12 font-semibold block rounded-md bg-gray-400'>
-        <Link to={`/boards/${board.id}`}>
+        <Link to={`/boards/${board.id}`} className='hover:underline hover:text-blue-500'>
           {board.title}
         </Link>
       </div>
