@@ -1,8 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import BoardPage from 'components/pages/BoardPage';
-import NotFoundPage from 'components/pages/NotFoundPage';
 import DefaultPage from 'components/pages/DefaultPages';
+import NotFoundPage from 'components/pages/NotFoundPage';
+import BoardPage from 'components/pages/BoardPage';
+import ColumnPage from 'components/pages/ColumnPage';
 
 export const createRouter = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ export const createRouter = createBrowserRouter([
       },
       {
         path: 'boards/:boardId',
-        element: <div className='text-4xl text-white'>This page is columns page</div>,
+        element: <ColumnPage />,
       },
     ],
   },
