@@ -3,3 +3,10 @@ export interface Board {
   title: string;
   contents: string;
 }
+
+export interface Column {
+  id: number;
+  title: string;
+  contents: string;
+  boardId: number;
+}
