@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import type { Todo } from '@/domains/types';
 import classes from './TodoListPresentational.module.css';
