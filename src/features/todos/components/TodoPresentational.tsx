@@ -1,4 +1,4 @@
-import Modal from '@/components/organisms/Modal';
+import { ModalContainer } from '@/components/organisms/modal';
 import type { Todo } from '@/domains/types';
 
 import classes from './TodoPresentational.module.css';
@@ -9,12 +9,12 @@ interface TodoProps {
 
 const TodoPresentational = ({ todo }: TodoProps) => {
   return (
-    <Modal>
+    <ModalContainer>
       <main className={classes.todo}>
         <p className={classes.title}>{todo.title}</p>
         <p className={classes.contents}>{todo.contents}</p>
       </main>
-    </Modal>
+    </ModalContainer>
   );
 };
 
