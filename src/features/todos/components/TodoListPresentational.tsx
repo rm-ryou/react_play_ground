@@ -14,20 +14,23 @@ const TodoListPresentational = ({ todos }: TodoListProps) => {
         <ul className={classes.todoList}>
           {todos.map((todo) => (
             <li key={todo.id} className={classes.todo}>
-              <Link to={todo.id}>
+              {todo.id}
+              <Link to={`/${todo.id}`} >
                 <p className={classes.title}>{todo.title}</p>
                 <p className={classes.contents}>{todo.contents}</p>
               </Link>
             </li>
           ))}
-        </ul>
+        </ul >
       )}
-      {todos.length === 0 && (
-        <>
-          <h2>no todo list yet.</h2>
-          <p>But don't worry! We are going to create it now!</p>
-        </>
-      )}
+      {
+        todos.length === 0 && (
+          <>
+            <h2>no todo list yet.</h2>
+            <p>But don't worry! We are going to create it now!</p>
+          </>
+        )
+      }
     </>
   );
 };
