@@ -2,14 +2,10 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   box-sizing: border-box;
-  background: linear-gradient(blue, gray);
-
+  background: linear-gradient(#000077, #000011);
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,8 +14,7 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  text-align: center;
   min-width: 320px;
   min-height: 100vh;
 }

@@ -1,11 +1,18 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
+import Todos from './Todos';
 import DefaultLayout from './DefaultLayout';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <DefaultLayout />,
+    children: [
+      {
+        path: '/',
+        element: <Todos />,
+      },
+    ],
   },
 ]);
 
