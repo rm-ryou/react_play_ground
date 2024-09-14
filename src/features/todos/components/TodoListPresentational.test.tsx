@@ -1,0 +1,29 @@
+import React from 'react';
+import { describe, it, expect } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
+import TodoListPresentational from './TodoListPresentational';
+
+describe('todoが1以上存在する場合', () => {
+  it('todoが表示される', () => {
+    const mockTodos = [
+      { id: 1, title: 'test', contents: 'sample contents' },
+    ];
+
+    render(<TodoListPresentational todos={mockTodos} />);
+
+    expect(screen.getByText('test')).toBeInTheDocument();
+    expect(screen.getByText('sample contents')).toBeInTheDocument();
+  });
+});
+
+describe('todoが存在しない場合', () => {
+  it('todoが作成されていないことを伝えるメッセージが表示される', () => {
+    const emptyTodos = [];
+
+    render(<TodoListPresentational todos={emptyTodos} />);
+
+    expect(screen.getByText('no todo list yet.')).toBeInTheDocument();
+  });
+});
