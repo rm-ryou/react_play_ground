@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import type { Todo } from '@/domains/types';
 import classes from './TodoListPresentational.module.css';
 
@@ -7,7 +5,7 @@ interface TodoListProps {
   todos: Todo[];
 }
 
-const TodoListPresentational: FC<TodoListProps> = ({ todos }) => {
+const TodoListPresentational = ({ todos }: TodoListProps) => {
   return (
     <>
       {todos.length > 0 && (
