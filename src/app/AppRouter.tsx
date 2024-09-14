@@ -22,10 +22,6 @@ const router = createBrowserRouter([
             element: <TodoContainer />,
             loader: todoLoader,
           },
-          {
-            path: '*',
-            element: <ErrorPage />,
-          },
         ],
       },
     ],
