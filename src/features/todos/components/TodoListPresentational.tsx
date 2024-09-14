@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 import type { Todo } from '@/domains/types';
 import classes from './TodoListPresentational.module.css';
@@ -7,15 +7,17 @@ interface TodoListProps {
   todos: Todo[];
 }
 
-const TodoListPresentational: FC<TodoListProps> = ({ todos }) => {
+const TodoListPresentational = ({ todos }: TodoListProps) => {
   return (
     <>
       {todos.length > 0 && (
         <ul className={classes.todoList}>
           {todos.map((todo) => (
             <li key={todo.id} className={classes.todo}>
-              <p className={classes.title}>{todo.title}</p>
-              <p className={classes.contents}>{todo.contents}</p>
+              <Link to={todo.id}>
+                <p className={classes.title}>{todo.title}</p>
+                <p className={classes.contents}>{todo.contents}</p>
+              </Link>
             </li>
           ))}
         </ul>
