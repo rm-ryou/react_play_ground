@@ -1,10 +1,11 @@
 import { Outlet } from 'react-router-dom';
 
+import { Header } from '@/components/organisms/header';
+
 const DefaultLayout = () => {
   return (
     <>
-      <h1>Hello, React!!</h1>
-      <p>This project is simple application by react</p>
+      <Header />
       <Outlet />
     </>
   );

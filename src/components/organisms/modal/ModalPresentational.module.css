@@ -11,5 +11,6 @@
   border: none;
   border-radius: 6px;
   background-color: #00ffff; 
+  position: fixed;
   z-index: 1;
 }
