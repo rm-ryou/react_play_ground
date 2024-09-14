@@ -14,7 +14,6 @@ const TodoListPresentational = ({ todos }: TodoListProps) => {
         <ul className={classes.todoList}>
           {todos.map((todo) => (
             <li key={todo.id} className={classes.todo}>
-              {todo.id}
               <Link to={`/${todo.id}`} >
                 <p className={classes.title}>{todo.title}</p>
                 <p className={classes.contents}>{todo.contents}</p>
