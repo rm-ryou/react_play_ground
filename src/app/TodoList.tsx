@@ -2,7 +2,7 @@
 
 import TodoListContainer from '@/features/todos/components/TodoListContainer';
 
-const Todos = () => {
+const TodoList = () => {
   return (
     <>
       <main>
@@ -12,4 +12,4 @@ const Todos = () => {
   );
 };
 
-export default Todos;
+export default TodoList;
