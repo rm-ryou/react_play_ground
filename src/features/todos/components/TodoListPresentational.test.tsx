@@ -4,10 +4,11 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import TodoListPresentational from './TodoListPresentational';
+import type { Todo } from '@/domains/types';
 
 describe('todoが1以上存在する場合', () => {
   it('todoが表示される', () => {
-    const mockTodos = [
+    const mockTodos: Todo[] = [
       { id: 1, title: 'test', contents: 'sample contents' },
     ];
 
@@ -20,7 +21,7 @@ describe('todoが1以上存在する場合', () => {
 
 describe('todoが存在しない場合', () => {
   it('todoが作成されていないことを伝えるメッセージが表示される', () => {
-    const emptyTodos = [];
+    const emptyTodos: Todo[] = [];
 
     render(<TodoListPresentational todos={emptyTodos} />);
 
