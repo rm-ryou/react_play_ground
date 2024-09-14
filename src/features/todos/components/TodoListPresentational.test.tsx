@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import TodoListPresentational from './TodoListPresentational';
 import type { Todo } from '@/domains/types';
@@ -8,10 +9,14 @@ import type { Todo } from '@/domains/types';
 describe('todoが1以上存在する場合', () => {
   it('todoが表示される', () => {
     const mockTodos: Todo[] = [
-      { id: 1, title: 'test', contents: 'sample contents' },
+      { id: '1', title: 'test', contents: 'sample contents' },
     ];
 
-    render(<TodoListPresentational todos={mockTodos} />);
+    render(
+      <BrowserRouter>
+        <TodoListPresentational todos={mockTodos} />
+      </BrowserRouter>
+    );
 
     expect(screen.getByText('test')).toBeInTheDocument();
     expect(screen.getByText('sample contents')).toBeInTheDocument();
