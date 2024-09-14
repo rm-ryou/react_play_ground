@@ -7,7 +7,7 @@ const Modal = ({ children }: { children: React.ReactNode }) => {
   const navigate = useNavigate();
 
   const closeModal = () => {
-    navigate('..')
+    navigate('..');
   };
 
   return (

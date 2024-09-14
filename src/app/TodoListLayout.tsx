@@ -1,8 +1,8 @@
-import { Outlet } from "react-router-dom"
+import { Outlet } from 'react-router-dom';
 
 import TodoListContainer from '@/features/todos/components/TodoListContainer';
 
-const TodoList = () => {
+const TodoListLayout = () => {
   return (
     <>
       <Outlet />
@@ -13,4 +13,4 @@ const TodoList = () => {
   );
 };
 
-export default TodoList;
+export default TodoListLayout;

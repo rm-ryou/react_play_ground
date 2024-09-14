@@ -1,8 +1,8 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import TodoList from './TodoList';
-import Todo from './Todo';
 import DefaultLayout from './DefaultLayout';
+import TodoListLayout from './TodoListLayout';
+import TodoContainer from '@/features/todos/components/TodoContainer';
 
 const router = createBrowserRouter([
   {
@@ -11,13 +11,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <TodoList />,
+        element: <TodoListLayout />,
         children: [
           {
             path: '/:id',
-            element: <Todo />
-          }
-        ]
+            element: <TodoContainer />,
+          },
+        ],
       },
     ],
   },
