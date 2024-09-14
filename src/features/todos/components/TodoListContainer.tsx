@@ -1,8 +1,10 @@
+import { useLoaderData } from 'react-router-dom';
+
 import TodoListPresentational from './TodoListPresentational';
-import { TodoData } from '@/data';
+import type { Todo } from '@/domains/types';
 
 const TodoListContainer = () => {
-  const todos = TodoData;
+  const todos = useLoaderData() as Todo[];
 
   return <TodoListPresentational todos={todos} />;
 };
