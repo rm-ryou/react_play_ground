@@ -15,7 +15,7 @@ describe('todoが1以上存在する場合', () => {
     render(
       <BrowserRouter>
         <TodoListPresentational todos={mockTodos} />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
 
     expect(screen.getByText('test')).toBeInTheDocument();
