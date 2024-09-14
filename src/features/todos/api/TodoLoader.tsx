@@ -14,11 +14,20 @@ const todosLoader = async () => {
 };
 
 const todoLoader = async ({ params }: LoaderFunctionArgs) => {
-  const baseURL = setTodosURL();
-  const response = await fetch(`${baseURL}/${params.id}`);
-  const resData = await response.json();
+  try {
+    const baseURL = setTodosURL();
+    const response = await fetch(`${baseURL}/${params.id}`);
+    if (!response.ok) {
+      const errData = await response.json();
+      throw new Error(errData.error)
+    }
+    const resData = await response.json();
 
-  return resData;
+    return resData;
+  } catch (error) {
+    console.log('Error while fetching data: ', error);
+    return null
+  }
 };
 
 export { todosLoader, todoLoader };
